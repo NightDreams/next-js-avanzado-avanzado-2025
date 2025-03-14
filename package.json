@@ -34,8 +34,8 @@
     "negotiator": "^1.0.0",
     "next": "15.0.3",
     "postgres": "^3.4.5",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106"
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
@@ -46,6 +46,9 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "15.0.3",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-react": "^7.37.4",
     "husky": "^9.1.7",
     "lint-staged": "^15.5.0",
     "postcss": "^8",
