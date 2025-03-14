@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import {
   Alert,
@@ -11,16 +11,16 @@ import {
   Heading,
   Input,
   Text,
-} from "@chakra-ui/react"
-import { useActionState } from "react"
-import { useFormStatus } from "react-dom"
+} from '@chakra-ui/react';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 
-import { login } from "./actions"
-import { Hint } from "./hint"
+import { login } from './actions';
+import { Hint } from './hint';
 
 export default function I18nPage() {
-  const [state, action] = useActionState(login, { error: "" })
-  const status = useFormStatus()
+  const [state, action] = useActionState(login, { error: '' });
+  const status = useFormStatus();
 
   return (
     <main className="">
@@ -75,5 +75,5 @@ export default function I18nPage() {
         )}
       </form>
     </main>
-  )
+  );
 }

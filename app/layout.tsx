@@ -1,29 +1,29 @@
-import "./globals.css"
+import './globals.css';
 
-import type { Metadata } from "next"
-import { PT_Serif } from "next/font/google"
+import type { Metadata } from 'next';
+import { PT_Serif } from 'next/font/google';
 
-import { Breadcrumb } from "@/components/breadcrumb"
+import { Breadcrumb } from '@/components/breadcrumb';
 
-import { Providers } from "./providers"
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: "Curso de Next.js - Platzi 🦑",
+  title: 'Curso de Next.js - Platzi 🦑',
   description:
-    "Proyecto de estudio para aplicación de conocimientos de Next.js 15",
-}
+    'Proyecto de estudio para aplicación de conocimientos de Next.js 15',
+};
 
 const font = PT_Serif({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-app",
-})
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-app',
+});
 
 export default async function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={font.variable}>
@@ -34,7 +34,7 @@ export default async function RootLayout({
 
         <footer className="opacity-70 text-gray-600 text-xs mt-20 pb-8 text-center">
           <p>
-            Made with 💜 by{" "}
+            Made with 💜 by{' '}
             <a
               href="https://platzi.com/profes/jonalvarezz/"
               target="_blank"
@@ -47,5 +47,5 @@ export default async function RootLayout({
         </footer>
       </body>
     </html>
-  )
+  );
 }

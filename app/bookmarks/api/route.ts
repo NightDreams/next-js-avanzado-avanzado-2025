@@ -1,4 +1,4 @@
-import { orm } from "../db"
+import { orm } from '../db';
 
 export async function GET() {
   const res = await orm.query.bookmarks.findMany({
@@ -6,7 +6,7 @@ export async function GET() {
     with: {
       author: true,
     },
-  })
+  });
 
-  return Response.json({ data: res })
+  return Response.json({ data: res });
 }

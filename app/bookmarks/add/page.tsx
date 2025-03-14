@@ -1,6 +1,6 @@
-"use client"
+'use client';
 
-import Form from "next/form"
+import Form from 'next/form';
 
 import {
   FormControl,
@@ -9,13 +9,13 @@ import {
   Input,
   Button,
   Text,
-} from "@chakra-ui/react"
+} from '@chakra-ui/react';
 
-import { addBookmark } from "./actions"
-import { useActionState } from "react"
+import { addBookmark } from './actions';
+import { useActionState } from 'react';
 
 export default function Bookmarks() {
-  const [state, action, pending] = useActionState(addBookmark, { error: "" })
+  const [state, action, pending] = useActionState(addBookmark, { error: '' });
 
   return (
     <main className="mt-12">
@@ -47,5 +47,5 @@ export default function Bookmarks() {
         )}
       </Form>
     </main>
-  )
+  );
 }

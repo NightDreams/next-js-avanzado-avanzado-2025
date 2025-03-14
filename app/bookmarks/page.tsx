@@ -1,22 +1,22 @@
-"use client"
+'use client';
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react';
 
-import { Heading, Text } from "@chakra-ui/react"
+import { Heading, Text } from '@chakra-ui/react';
 
-import { Bookmark } from "@/components/bookmark"
-import { BookmarkType } from "./schema"
+import { Bookmark } from '@/components/bookmark';
+import { BookmarkType } from './schema';
 
 export default function Bookmarks() {
-  const [bookmarks, setBookmarks] = useState<BookmarkType[]>([])
+  const [bookmarks, setBookmarks] = useState<BookmarkType[]>([]);
 
   useEffect(() => {
-    fetch("/bookmarks/api", {
-      next: { tags: ["bookmarks"] },
+    fetch('/bookmarks/api', {
+      next: { tags: ['bookmarks'] },
     })
       .then((response) => response.json() as Promise<{ data: BookmarkType[] }>)
-      .then(({ data }) => setBookmarks(data))
-  }, [])
+      .then(({ data }) => setBookmarks(data));
+  }, []);
 
   return (
     <main className="mt-12">
@@ -40,5 +40,5 @@ export default function Bookmarks() {
         ))}
       </ul>
     </main>
-  )
+  );
 }

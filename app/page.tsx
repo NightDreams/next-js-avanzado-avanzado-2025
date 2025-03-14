@@ -6,11 +6,11 @@ import {
   LockClosedIcon,
   BugAntIcon,
   AdjustmentsVerticalIcon,
-} from "@heroicons/react/24/outline"
-import Image from "next/image"
+} from '@heroicons/react/24/outline';
+import Image from 'next/image';
 
-import { Card } from "../components/card"
-import { Heading, Text } from "@chakra-ui/react"
+import { Card } from '../components/card';
+import { Heading, Text } from '@chakra-ui/react';
 
 export default function Home() {
   return (
@@ -91,5 +91,5 @@ export default function Home() {
         </ul>
       </section>
     </main>
-  )
+  );
 }

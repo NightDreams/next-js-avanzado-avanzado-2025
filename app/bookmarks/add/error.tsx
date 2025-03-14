@@ -1,18 +1,18 @@
-"use client"
+'use client';
 
-import { useEffect } from "react"
+import { useEffect } from 'react';
 
-import { Heading, Button } from "@chakra-ui/react"
+import { Heading, Button } from '@chakra-ui/react';
 
 type Props = {
-  error: Error & { digest?: string }
-  reset: () => void
-}
+  error: Error & { digest?: string };
+  reset: () => void;
+};
 
 export default function Error({ error, reset }: Props) {
   useEffect(() => {
-    console.error(error)
-  }, [error])
+    console.error(error);
+  }, [error]);
 
   return (
     <div>
@@ -26,5 +26,5 @@ export default function Error({ error, reset }: Props) {
         Volver a intentar
       </Button>
     </div>
-  )
+  );
 }

@@ -17,5 +17,5 @@ export default function Loading() {
         ))}
       </ul>
     </div>
-  )
+  );
 }

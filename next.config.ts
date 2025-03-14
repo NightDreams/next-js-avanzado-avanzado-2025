@@ -1,25 +1,25 @@
-import { withSentryConfig } from "@sentry/nextjs"
-import bunbleAnalyzer from "@next/bundle-analyzer"
+import { withSentryConfig } from '@sentry/nextjs';
+import bunbleAnalyzer from '@next/bundle-analyzer';
 
-import type { NextConfig } from "next"
+import type { NextConfig } from 'next';
 
-const enableSentry = Boolean(process.env.SENTRY_DSN)
+const enableSentry = Boolean(process.env.SENTRY_DSN);
 
 const withBundleAnalyzer = bunbleAnalyzer({
-  enabled: process.env.BUNDLE_ANALYZE === "true",
-})
+  enabled: process.env.BUNDLE_ANALYZE === 'true',
+});
 
 const nextConfig: NextConfig = withBundleAnalyzer({
   /* config options here */
-})
+});
 
 const getSentryConfig = () =>
   withSentryConfig(nextConfig, {
     // For all available options, see:
     // https://github.com/getsentry/sentry-webpack-plugin#options
 
-    org: "personal-lsj",
-    project: "javascript-nextjs",
+    org: 'personal-lsj',
+    project: 'javascript-nextjs',
 
     // Only print logs for uploading source maps in CI
     silent: !process.env.CI,
@@ -34,8 +34,8 @@ const getSentryConfig = () =>
     sourcemaps: {
       deleteSourcemapsAfterUpload: true,
     },
-  })
+  });
 
-const CONFIG = enableSentry ? getSentryConfig() : nextConfig
+const CONFIG = enableSentry ? getSentryConfig() : nextConfig;
 
-export default CONFIG
+export default CONFIG;

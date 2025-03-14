@@ -1,13 +1,13 @@
-import Link from "next/link"
-import { ArrowUpRightIcon } from "@heroicons/react/24/solid"
-import { Heading, Text } from "@chakra-ui/react"
+import Link from 'next/link';
+import { ArrowUpRightIcon } from '@heroicons/react/24/solid';
+import { Heading, Text } from '@chakra-ui/react';
 
 type CardProps = {
-  term: string
-  to: string
-  desc?: string
-  icon: React.ReactNode
-}
+  term: string;
+  to: string;
+  desc?: string;
+  icon: React.ReactNode;
+};
 
 export function Card({ to, term, desc, icon }: CardProps) {
   return (
@@ -25,5 +25,5 @@ export function Card({ to, term, desc, icon }: CardProps) {
         </div>
       </div>
     </Link>
-  )
+  );
 }

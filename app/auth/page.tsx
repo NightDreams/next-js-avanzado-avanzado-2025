@@ -1,5 +1,5 @@
-import { LockOpenIcon } from "@heroicons/react/24/outline"
-import { Heading, Text, Button } from "@chakra-ui/react"
+import { LockOpenIcon } from '@heroicons/react/24/outline';
+import { Heading, Text, Button } from '@chakra-ui/react';
 
 export default async function I18nPage() {
   return (
@@ -26,5 +26,5 @@ export default async function I18nPage() {
         <Button className="mt-10">Salir</Button>
       </div>
     </main>
-  )
+  );
 }

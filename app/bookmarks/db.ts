@@ -1,18 +1,18 @@
-import { drizzle } from "drizzle-orm/postgres-js"
-import postgres from "postgres"
+import { drizzle } from 'drizzle-orm/postgres-js';
+import postgres from 'postgres';
 
-import dotenv from "dotenv"
-import * as schema from "./schema"
+import dotenv from 'dotenv';
+import * as schema from './schema';
 
-dotenv.config()
+dotenv.config();
 
 // Check .env
 if (!process.env.POSTGRESQL_ENDPOINT) {
-  throw new Error("POSTGRESQL_ENDPOINT env var is not set")
+  throw new Error('POSTGRESQL_ENDPOINT env var is not set');
 }
 
-export const client = postgres(process.env.POSTGRESQL_ENDPOINT)
+export const client = postgres(process.env.POSTGRESQL_ENDPOINT);
 
 export const orm = drizzle(client, {
   schema,
-})
+});

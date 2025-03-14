@@ -1,28 +1,28 @@
-import { Fragment, Suspense } from "react"
-import Image from "next/image"
+import { Fragment, Suspense } from 'react';
+import Image from 'next/image';
 
-import { Heading, Text } from "@chakra-ui/react"
+import { Heading, Text } from '@chakra-ui/react';
 
-import { Bookmark } from "@/components/bookmark"
-import { orm } from "../db"
-import { isInWhitelist } from "../utils/whitelist"
+import { Bookmark } from '@/components/bookmark';
+import { orm } from '../db';
+import { isInWhitelist } from '../utils/whitelist';
 
 export default async function Author({
   params,
 }: {
-  params: Promise<{ username: string }>
+  params: Promise<{ username: string }>;
 }) {
-  const { username } = await params
+  const { username } = await params;
 
-  const author = await getAuthor(username)
+  const author = await getAuthor(username);
 
   if (!author) {
-    return null
+    return null;
   }
 
-  preload(author.id)
+  preload(author.id);
 
-  const isWhitelisted = await isInWhitelist(author)
+  const isWhitelisted = await isInWhitelist(author);
 
   return (
     <main className="my-10">
@@ -59,11 +59,11 @@ export default async function Author({
         {isWhitelisted && <AuthorBookmarksById authorId={author.id} />}
       </Suspense>
     </main>
-  )
+  );
 }
 
 async function AuthorBookmarksById(props: { authorId: number }) {
-  const bookmarks = await getBookmarksByAuthorId(props.authorId)
+  const bookmarks = await getBookmarksByAuthorId(props.authorId);
 
   return (
     <ul className="mt-8 text-lg">
@@ -73,21 +73,21 @@ async function AuthorBookmarksById(props: { authorId: number }) {
         </li>
       ))}
     </ul>
-  )
+  );
 }
 
 async function getBookmarksByAuthorId(authorId: number) {
   return orm.query.bookmarks.findMany({
     where: (entry, { eq }) => eq(entry.authorId, authorId),
-  })
+  });
 }
 
 async function getAuthor(username: string) {
   return orm.query.authors.findFirst({
     where: (entry, { eq }) => eq(entry.username, username),
-  })
+  });
 }
 
 function preload(authorId: number) {
-  void getBookmarksByAuthorId(authorId)
+  void getBookmarksByAuthorId(authorId);
 }

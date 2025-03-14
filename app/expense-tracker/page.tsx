@@ -1,4 +1,4 @@
-import Form from "next/form"
+import Form from 'next/form';
 
 import {
   FormControl,
@@ -14,19 +14,19 @@ import {
   Td,
   TableContainer,
   IconButton,
-} from "@chakra-ui/react"
-import { ArchiveBoxXMarkIcon } from "@heroicons/react/24/outline"
+} from '@chakra-ui/react';
+import { ArchiveBoxXMarkIcon } from '@heroicons/react/24/outline';
 
 import {
   getExpenses,
   addExpense,
   deleteExpense,
   getMonthlyTotal,
-} from "./actions"
+} from './actions';
 
 export default async function ExpenseTracker() {
-  const expenses = await getExpenses()
-  const total = await getMonthlyTotal()
+  const expenses = await getExpenses();
+  const total = await getMonthlyTotal();
 
   return (
     <main className="my-16">
@@ -74,7 +74,7 @@ export default async function ExpenseTracker() {
                 <Td>$ {expense.amount}</Td>
                 <Td>{expense.date.toLocaleDateString()}</Td>
                 <Td>
-                  <form action={deleteExpense} style={{ display: "inline" }}>
+                  <form action={deleteExpense} style={{ display: 'inline' }}>
                     <input type="hidden" value={expense.id} name="id" />
                     <IconButton
                       type="submit"
@@ -91,5 +91,5 @@ export default async function ExpenseTracker() {
         </Table>
       </TableContainer>
     </main>
-  )
+  );
 }
