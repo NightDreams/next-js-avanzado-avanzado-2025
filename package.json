@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "prettier": "prettier --write .",
     "bookmarks:db:studio": "drizzle-kit studio",
     "bookmarks:db:push": "drizzle-kit push",
