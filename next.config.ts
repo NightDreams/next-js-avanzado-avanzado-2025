@@ -11,6 +11,19 @@ const withBundleAnalyzer = bunbleAnalyzer({
 
 const nextConfig: NextConfig = withBundleAnalyzer({
   /* config options here */
+  experimental: {
+    turbo: {
+      resolveExtensions: [
+        '.mdx',
+        '.tsx',
+        '.ts',
+        '.jsx',
+        '.js',
+        '.mjs',
+        '.json',
+      ],
+    },
+  },
 });
 
 const getSentryConfig = () =>
