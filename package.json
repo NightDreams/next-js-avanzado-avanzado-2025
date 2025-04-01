@@ -11,7 +11,7 @@
     "lint:fix": "next lint --fix",
     "prettier": "prettier --write .",
     "bookmarks:db:studio": "drizzle-kit studio",
-    "bookmarks:db:push": "drizzle-kit push",
+    "bookmarks:db:push": "drizzle-kit push --config=./drizzle.config.ts",
     "bookmarks:db:generate": "drizzle-kit generate",
     "bookmarks:db:migrate": "drizzle-kit migrate",
     "prepare": "husky"
